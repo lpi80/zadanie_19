@@ -17,9 +17,10 @@ console.log(multiply(5, 5));
 /*task 3*/
 console.log('Task 3');
 const average = (...args) => {
-    let licznik = 0;
-    let suma = args.forEach(arg => licznik += arg);
-    return licznik / args.length;
+    let counter = args.reduce(function(previousValue, currentValue, index, array) {
+        return previousValue + currentValue;
+    });
+    return counter / args.length;
 }
 console.log(average(1));
 console.log(average(1, 3));
@@ -43,17 +44,17 @@ function buildString(...template) {
 
 /*codewars task 2*/
 function shuffleIt(arr, ...tab) {
-    let pomoc = arr;
+    let help = arr;
     tab.forEach(arg => {
-        let pamiec = [];
-        pomoc.forEach(a => pamiec.push(a));
+        let memory = [];
+        help.forEach(a => memory.push(a));
         let [a, b] = arg;
         [b, a] = [a, b];
-        pomoc[b] = pamiec[a];
-        pomoc[a] = pamiec[b];
+        help[b] = memory[a];
+        help[a] = memory[b];
 
 
     })
-    return pomoc;
+    return help;
 }
 console.log(shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]));
