@@ -32,10 +32,9 @@ var average = function average() {
         args[_key] = arguments[_key];
     }
 
-    var counter = args.reduce(function (previousValue, currentValue, index, array) {
-        return previousValue + currentValue;
-    });
-    return counter / args.length;
+    return args.reduce(function (a, b) {
+        return a + b;
+    }, 0) / args.length;
 };
 console.log(average(1));
 console.log(average(1, 3));

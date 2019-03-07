@@ -16,12 +16,7 @@ console.log(multiply(5, 5));
 
 /*task 3*/
 console.log('Task 3');
-const average = (...args) => {
-    let counter = args.reduce(function(previousValue, currentValue, index, array) {
-        return previousValue + currentValue;
-    });
-    return counter / args.length;
-}
+const average = (...args) => args.reduce((a, b) => a + b, 0) / args.length;
 console.log(average(1));
 console.log(average(1, 3));
 console.log(average(1, 3, 6, 6));
